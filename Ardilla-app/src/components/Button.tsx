@@ -1,12 +1,9 @@
-// src/Components/Button.tsx
-
-import React from "react";
+import React from 'react';
 
 interface ButtonProps {
   onClick?: () => void;
-  type?: "button" | "submit" | "reset";
+  type?: 'button' | 'submit' | 'reset';
   title: string;
-  size?: string;
   bgColor?: string;
   className?: string;
   disabled?: boolean;
@@ -16,11 +13,10 @@ interface ButtonProps {
 
 const Button: React.FC<ButtonProps> = ({
   onClick,
-  type = "button",
+  type = 'button',
   title,
-//   size = "medium",
-  bgColor = "bg-blue-500", // Replace with your default background color
-  className = "",
+  bgColor = 'bg-blue-500', // Replace with your default background color
+  className = '',
   disabled = false,
   loading = false,
   style = {},
@@ -30,7 +26,7 @@ const Button: React.FC<ButtonProps> = ({
       <button
         type={type}
         onClick={onClick}
-        className={`h-12 px-8 rounded-lg flex justify-center items-center ${className} ${bgColor}`}
+        className={`h-12 px-8 rounded-full py-3 flex justify-center items-center ${className} ${bgColor}`}
         disabled={disabled || loading}
         style={style}
       >
