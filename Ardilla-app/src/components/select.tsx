@@ -10,7 +10,7 @@ interface SelectProps {
   name: string;
   onChange: (name: string, value: string) => void;
   style?: React.CSSProperties;
-  data: any[]; // Adjust type as per your data structure
+  data: string[];
   validationHandler?: (name: string, errorMessage: string) => void;
   value: string;
   size?: "small" | "medium" | "large";
@@ -33,12 +33,8 @@ const Select: React.FC<SelectProps> = ({
   data,
   validationHandler = () => {},
   value,
-  size = "medium",
   labelClassName = "",
-  filter = "",
-  filterValue = "",
   title = "",
-  secondaryName = "",
 }) => {
   const onChangeHandler = (event: ChangeEvent<HTMLSelectElement>) => {
     const { name, value } = event.target;
@@ -56,17 +52,17 @@ const Select: React.FC<SelectProps> = ({
   };
 
   return (
-    <div className={`flex flex-col px-8 ${size === "medium" ? "w-1/2" : "w-full"}`}>
-      <label htmlFor={name} className={`text-sm ${labelClassName}`}>
+    <div className="flex flex-col mb-8">
+      <label htmlFor={name} className={`text-sm mb-2 ${labelClassName}`}>
         {label}
-        {required && <span className="text-red-600">&nbsp;*</span>}
+        {required && <span className="text-red-600">&nbsp;</span>}
         {error && <span className="text-red-600 text-sm">{error}</span>}
       </label>
       <select
         value={value}
         required={required}
         name={name}
-        className={`border border-gray-300 rounded px-4 py-2 mt-1 ${className}`}
+        className={`border-b border-gray-400 bg-transparent px-4 py-2 ${className}`}
         style={style}
         disabled={disabled}
         onChange={onChangeHandler}
@@ -76,17 +72,11 @@ const Select: React.FC<SelectProps> = ({
           {label || title}
         </option>
         {data &&
-          data.map((item, i) =>
-            filter ? (
-              <option value={item[filterValue]} key={i}>
-                {`${item[filter]} ${item[secondaryName] ? item[secondaryName] : ""}`}
-              </option>
-            ) : (
-              <option value={item.value} key={i}>
-                {item.item ? item.item : item.value}
-              </option>
-            )
-          )}
+          data.map((item, i) => (
+            <option value={item} key={i}>
+              {item}
+            </option>
+          ))}
       </select>
     </div>
   );
@@ -102,7 +92,7 @@ Select.defaultProps = {
   data: [],
   validationHandler: () => {},
   size: "medium",
-  labelClassName: "text-black",
+  labelClassName: "text-white",
   filter: "",
   filterValue: "",
   value: "",

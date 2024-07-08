@@ -41,7 +41,6 @@ const Input: React.FC<InputProps> = ({
   type = "text",
   validationHandler = () => {},
   value,
-  size = "medium",
   labelClassName = "",
 }) => {
   const onChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
@@ -78,10 +77,10 @@ const Input: React.FC<InputProps> = ({
   };
 
   return (
-    <div className={`flex flex-col px-8 ${size === "medium" ? "w-1/2" : "w-full"}`}>
-      <label htmlFor={name} className={`text-sm ${labelClassName}`}>
+    <div className="flex flex-col mb-8">
+      <label htmlFor={name} className={`text-sm mb-2 ${labelClassName}`}>
         {label}
-        {required && <span className="text-red-600">&nbsp;*</span>}
+        {required && <span className="text-red-600">&nbsp;</span>}
         {error && <span className="text-red-600 text-sm">{error}</span>}
       </label>
       <input
@@ -91,7 +90,7 @@ const Input: React.FC<InputProps> = ({
         value={value as string}
         checked={checked}
         placeholder={placeholder}
-        className={`border border-gray-300 rounded px-4 py-2 mt-1 ${className}`}
+        className={`border-b border-gray-400 bg-transparent px-4 py-2 ${className}`}
         required={required}
         style={style}
         disabled={disabled}

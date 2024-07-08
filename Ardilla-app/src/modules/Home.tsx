@@ -1,4 +1,4 @@
-
+import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import Button from '../components/Button';
@@ -6,13 +6,19 @@ import phone from '../assets/phone.svg';
 import expect from '../assets/expect.svg';
 import arrow from '../assets/arroww.svg';
 import Carosel from '../components/Carousel';
-import Caros from '../components/Caros';
 import back from '../assets/back.svg';
 import Access from '../components/Access';
-import icon from '../assets/icon.svg';
-import icon1 from '../assets/icon1.svg';
-import icon2 from '../assets/icon2.svg';
-import icon3 from '../assets/icon3.svg';
+import VideoCaro from '../components/VideoCaro';
+import onyinye from '../assets/onyinye.svg';
+import md from '../assets/md.svg';
+import dallas from '../assets/dallas.svg';
+import accessData from '../datas/AccessData';
+
+const videos = [
+  { src: onyinye, title: 'MD - Miss Oyinye Dallas', description: 'What is Ardilla and its benefits?' },
+  { src: md, title: '', description: '' },
+  { src: dallas, title: '', description: '' },
+];
 
 const Home = () => {
   return (
@@ -22,7 +28,7 @@ const Home = () => {
         textColor="text-white"
         buttonColor="bg-[#8807F7]"
         buttonTextColor="text-white"
-        buttonClassName="rounded-full"
+        buttonClassName="rounded-full "
       />
       <div className="bg-[#240053]">
         <div className="flex flex-col items-center justify-between py-10 max-w-6xl mx-auto">
@@ -31,7 +37,7 @@ const Home = () => {
             <div className="w-[780px] items-center text-center">
               <p className="font-medium text-[15px] leading-8">Ardilla helps you save and invest in achieving your financial goals, we have the most flexible and seamless way to grow your funds.</p>
             </div>
-            <Button title="Get Started" className="bg-white text-[#3D0072]" />
+            <Button title="Get Started" className="bg-white text-[#3D0072] hover:bg-[#8807F7] hover:text-[#FFFFFF]" />
           </div>
           <img src={phone} alt="" className="absolute top-[500px]" />
         </div>
@@ -49,57 +55,29 @@ const Home = () => {
       </div>
 
       <div className=" inset-x-0 " style={{ backgroundImage: `url(${back})` }}>
-        <div className="flex flex-col gap-8 max-w-6xl justify-center h-[1180px] mx-auto mt-10">
+        <div className="flex flex-col gap-8 max-w-6xl justify-center h-[1520px] mx-auto mt-10">
           <div className='w-[1093px] gap-6 flex flex-col mt-48'>
             <h1 className='w-[1093px] h-[100px] text-[#FFFFFF] text-[76px] font-extrabold leading-[100px]'>Access More With Your Money</h1>
             <p className='w-[836px] h-[64px] text-base text-[#FFFFFF] font-medium leading-[32px]'>Earn, learn, parlay, and grow financially. With Ardilla, you have more opportunities than ever at your finger tips. Why not take advantage today?</p>
-            <Button title='Learn more about savings' className='bg-[#1B0132] border text-[#FFFFFF]' />
+            <Link to="/interest">
+              <Button title='Learn more about savings' className='bg-[rgb(27,1,50)] hover:bg-[#8807F7] border text-[#FFFFFF]' />
+            </Link>
           </div>
-          <div className='grid grid-cols-2 md:grid-cols-2 mt-10'>
-            <Access 
-              icon={icon} 
-              title="DIB" 
-              description="Nothing beats an emergency quite like an emergency fund. With Ardilla you can get started building that emergency fund." 
-              linkText="Learn More" 
-              linkHref="/" 
-              containerClassName="bg-[#2C0041] p-8 rounded-lg text-white"
-              titleClassName="text-xl font-semibold mb-4"
-              descriptionClassName="text-base mb-6"
-              linkClassName="text-[#E8356D] font-medium"
-            />
-            <Access 
-              icon={icon1} 
-              title="Dreams" 
-              description="Helping you make your dreams a reality is important to us. We have helped so many others. We can help you as well." 
-              linkText="Learn More" 
-              linkHref="/" 
-              containerClassName="bg-[#2C0041] p-8 rounded-lg text-white"
-              titleClassName="text-xl font-semibold mb-4"
-              descriptionClassName="text-base mb-6"
-              linkClassName="text-[#E8356D] font-medium"
-            />
-            <Access 
-              icon={icon2} 
-              title="Vault" 
-              description="Lock away excess funds you don't know what to do with. We can help you safeguard it till you are ready. It definitely beats spending it and wondering where all that money went to." 
-              linkText="Learn More" 
-              linkHref="/" 
-              containerClassName="bg-[#2C0041] p-8 rounded-lg text-white"
-              titleClassName="text-xl font-semibold mb-4"
-              descriptionClassName="text-base mb-6"
-              linkClassName="text-[#E8356D] font-medium"
-            />
-            <Access 
-              icon={icon3} 
-              title="Grit" 
-              description="Become a VIP when you save more money with us. Enjoy better benefits." 
-              linkText="Learn More" 
-              linkHref="/" 
-              containerClassName="bg-[#2C0041] p-8 rounded-lg text-white"
-              titleClassName="text-xl font-semibold mb-4"
-              descriptionClassName="text-base mb-6"
-              linkClassName="text-[#E8356D] font-medium"
-            />
+          <div className='grid grid-cols-2 md:grid-cols-2 mt-10  bg-[#29014B] p-24 gap-16 rounded-lg text-white'>
+            {accessData.map((item, index) => (
+              <Access
+                key={index}
+                icon={item.icon}
+                title={item.title}
+                description={item.description}
+                linkText={item.linkText}
+                linkHref={item.linkHref}
+                containerClassName="w-[458.19px] h-[461.33px] p-8 rounded-lg hover:bg-[#43027E]"
+                titleClassName="text-xl font-semibold mb-4"
+                descriptionClassName="text-base mb-6"
+                linkClassName="text-[#FFFFFF] font-medium"
+              />
+            ))}
           </div>
         </div>
       </div>
@@ -122,7 +100,7 @@ const Home = () => {
             <p className="text-[#3D0072] text-base font-medium w-[505px]">Listen to testimonials from Ardilla users building wealth</p>
           </div>
           <div>
-            <Caros />
+            <VideoCaro videos={videos}/>
           </div>
         </div>
       </div>
