@@ -28,18 +28,22 @@ const Home = () => {
         textColor="text-white"
         buttonColor="bg-[#8807F7]"
         buttonTextColor="text-white"
-        buttonClassName="rounded-full "
+        buttonClassName="rounded-full"
       />
       <div className="bg-[#240053]">
         <div className="flex flex-col items-center justify-between py-10 max-w-6xl mx-auto">
-          <div className="text-white w-6xl items-center flex flex-col gap-10 relative mb-[440px]">
-            <h1 className="w-[1000px] h-[110px] font-extrabold text-[95px] text-center leading-[110px]">Your Access To More</h1>
-            <div className="w-[780px] items-center text-center">
-              <p className="font-medium text-[15px] leading-8">Ardilla helps you save and invest in achieving your financial goals, we have the most flexible and seamless way to grow your funds.</p>
+          <div className="text-white flex flex-col items-center gap-10 relative mb-40 md:mb-[440px]">
+            <h1 className="text-center text-[40px] sm:text-[50px] md:text-[60px] lg:text-[95px] leading-tight md:leading-[110px] font-extrabold">
+              Your Access To More
+            </h1>
+            <div className="text-center max-w-lg md:max-w-xl">
+              <p className="font-medium text-[15px] leading-8">
+                Ardilla helps you save and invest in achieving your financial goals, we have the most flexible and seamless way to grow your funds.
+              </p>
             </div>
-            <Button title="Get Started" className="bg-white text-[#3D0072] hover:bg-[#8807F7] hover:text-[#FFFFFF]" />
+            <Button title="Get Started" className="bg-white text-[#3D0072] hover:bg-[#8807F7] hover:text-white" />
           </div>
-          <img src={phone} alt="" className="absolute top-[442px]" />
+          <img src={phone} alt="phone" className="absolute top-[442px] w-3/4 md:w-auto" />
         </div>
       </div>
 
@@ -54,16 +58,20 @@ const Home = () => {
         </div>
       </div>
 
-      <div className=" inset-x-0 " style={{ backgroundImage: `url(${back})` }}>
-        <div className="flex flex-col gap-8 max-w-6xl justify-center h-[1520px] mx-auto mt-10">
-          <div className='w-[1093px] gap-6 flex flex-col mt-48'>
-            <h1 className='w-[1093px] h-[100px] text-[#FFFFFF] text-[76px] font-extrabold leading-[100px]'>Access More With Your Money</h1>
-            <p className='w-[836px] h-[64px] text-base text-[#FFFFFF] font-medium leading-[32px]'>Earn, learn, parlay, and grow financially. With Ardilla, you have more opportunities than ever at your finger tips. Why not take advantage today?</p>
-            <Link to="/interest">
-              <Button title='Learn more about savings' className='bg-[hsl(272,96%,10%)] hover:bg-[#8807F7] border text-[#FFFFFF]' />
+      <div className="bg-cover bg-center inset-x-0" style={{ backgroundImage: `url(${back})` }}>
+        <div className="flex flex-col gap-8 max-w-6xl justify-center h-auto md:h-[1520px] mx-auto mt-10">
+          <div className="w-full md:w-[1093px] gap-6 flex flex-col mt-10 md:mt-48">
+            <h1 className="text-white text-center text-4xl md:text-[76px] font-extrabold leading-tight md:leading-[100px]">
+              Access More With Your Money
+            </h1>
+            <p className="text-white text-center text-base md:w-[836px] font-medium leading-8 md:leading-[32px]">
+              Earn, learn, parlay, and grow financially. With Ardilla, you have more opportunities than ever at your fingertips. Why not take advantage today?
+            </p>
+            <Link to="/interest" className="self-center md:self-start">
+              <Button title='Learn more about savings' className='bg-[hsl(272,96%,10%)] hover:bg-[#8807F7] border text-white' />
             </Link>
           </div>
-          <div className='grid grid-cols-2 md:grid-cols-2 mt-10  bg-[#29014B] p-24 gap-16 rounded-lg text-white'>
+          <div className="grid grid-cols-1 md:grid-cols-2 mt-10 bg-[#29014B] p-8 md:p-24 gap-8 md:gap-16 rounded-lg text-white">
             {accessData.map((item, index) => (
               <Access
                 key={index}
@@ -72,10 +80,10 @@ const Home = () => {
                 description={item.description}
                 linkText={item.linkText}
                 linkHref={item.linkHref}
-                containerClassName="w-[458.19px] h-[461.33px] p-8 rounded-lg hover:bg-[#43027E]"
+                containerClassName="p-8 rounded-lg hover:bg-[#43027E]"
                 titleClassName="text-xl font-semibold mb-4"
                 descriptionClassName="text-base mb-6"
-                linkClassName="text-[#FFFFFF] font-medium"
+                linkClassName="text-white font-medium"
               />
             ))}
           </div>
@@ -85,22 +93,30 @@ const Home = () => {
       <div className="bg-white relative">
         <div className="flex flex-col justify-between py-10 max-w-6xl mx-auto">
           <div className="flex flex-col gap-11 mb-32">
-            <h1 className="text-[#0D9488] font-extrabold text-[80px] leading-[100px] w-[1101px] h-[200px]"><span className="text-[#3D0072]">Unlimited</span> Investment Opportunities</h1>
-            <p className="w-[789px] h-[100px] font-medium text-2xl leading-[50px] text-[#3D0072]">Plan towards your future by investing with ardilla, Grow your money confidently and securely with the available investment opportunities</p>
-            <Button title="Invest with ardilla (Coming Soon)" className="bg-white text-[#8807F7] border border-purple-600" />
+            <h1 className="text-[#0D9488] font-extrabold text-4xl md:text-[80px] leading-tight md:leading-[100px]">
+              <span className="text-[#3D0072]">Unlimited</span> Investment Opportunities
+            </h1>
+            <p className="font-medium text-2xl leading-8 md:leading-[50px] text-[#3D0072] max-w-lg md:max-w-none">
+              Plan towards your future by investing with Ardilla. Grow your money confidently and securely with the available investment opportunities.
+            </p>
+            <Button title="Invest with Ardilla (Coming Soon)" className="bg-white text-[#8807F7] border border-purple-600" />
           </div>
-          <img src={arrow} alt="arrow" className="absolute right-24 top-[155px]" />
+          <img src={arrow} alt="arrow" className="absolute right-24 top-[155px] hidden md:block" />
         </div>
       </div>
 
       <div className="bg-[#F3F4F6]">
-        <div className="flex flex-col justify-between py-10 max-w-6xl mx-auto mb-[150px] gap-20">
-          <div className="flex flex-col gap-5">
-            <h1 className="text-[#3D0072] w-[1100px] h-[101px] font-extrabold text-[70px] leading-[100.72px]">Don’t Take Our <span className="text-[#E8356D]">Word</span> For It</h1>
-            <p className="text-[#3D0072] text-base font-medium w-[505px]">Listen to testimonials from Ardilla users building wealth</p>
+        <div className="flex flex-col justify-between py-10 max-w-6xl mx-auto mb-10 md:mb-[150px] gap-8 md:gap-20">
+          <div className="flex flex-col gap-5 text-center md:text-left">
+            <h1 className="text-[#3D0072] text-4xl md:text-[70px] font-extrabold leading-tight md:leading-[100.72px]">
+              Don’t Take Our <span className="text-[#E8356D]">Word</span> For It
+            </h1>
+            <p className="text-[#3D0072] text-base font-medium max-w-lg md:max-w-none">
+              Listen to testimonials from Ardilla users building wealth.
+            </p>
           </div>
           <div>
-            <VideoCaro videos={videos}/>
+            <VideoCaro videos={videos} />
           </div>
         </div>
       </div>
