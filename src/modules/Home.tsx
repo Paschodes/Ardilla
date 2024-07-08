@@ -39,7 +39,7 @@ const Home = () => {
             </div>
             <Button title="Get Started" className="bg-white text-[#3D0072] hover:bg-[#8807F7] hover:text-[#FFFFFF]" />
           </div>
-          <img src={phone} alt="" className="absolute top-[500px]" />
+          <img src={phone} alt="" className="absolute top-[442px]" />
         </div>
       </div>
 
@@ -60,7 +60,7 @@ const Home = () => {
             <h1 className='w-[1093px] h-[100px] text-[#FFFFFF] text-[76px] font-extrabold leading-[100px]'>Access More With Your Money</h1>
             <p className='w-[836px] h-[64px] text-base text-[#FFFFFF] font-medium leading-[32px]'>Earn, learn, parlay, and grow financially. With Ardilla, you have more opportunities than ever at your finger tips. Why not take advantage today?</p>
             <Link to="/interest">
-              <Button title='Learn more about savings' className='bg-[rgb(27,1,50)] hover:bg-[#8807F7] border text-[#FFFFFF]' />
+              <Button title='Learn more about savings' className='bg-[hsl(272,96%,10%)] hover:bg-[#8807F7] border text-[#FFFFFF]' />
             </Link>
           </div>
           <div className='grid grid-cols-2 md:grid-cols-2 mt-10  bg-[#29014B] p-24 gap-16 rounded-lg text-white'>
