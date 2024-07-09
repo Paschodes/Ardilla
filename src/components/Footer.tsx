@@ -6,22 +6,22 @@ import Button from "./Button";
 const Footer = () => {
     return (
         <div className="bg-[#8807F7] relative">
-            <div className="max-w-6xl mx-auto text-[#FFFFFF] relative z-10">
-                <div className="flex justify-center items-center flex-col absolute inset-x-0 bottom-[470px]">
-                    <div className="relative w-[941px] h-[306.37px] flex items-center bg-cover bg-center" style={{ backgroundImage: `url(${background})` }}>
+            <div className="max-w-6xl mx-auto text-[#FFFFFF] relative z-10 sm:px-6 lg:px-8">
+                <div className="flex justify-center items-center flex-col absolute inset-x-0 bottom-[470px]  sm:bottom-40 md:bottom-64 lg:bottom-[470px]">
+                    <div className="relative w-[941px] h-[306.37px] flex items-center bg-cover bg-center md:w-[941px]" style={{ backgroundImage: `url(${background})` }}>
                         <div className="absolute inset-0 bg-gradient-to-r from-purple-950 to-purple-950 opacity-90"></div>
-                        <div className="relative w-full flex justify-between items-center px-20 z-10">
-                            <div className="flex flex-col gap-8">
-                                <h2 className="font-bold text-4xl w-80">Download for free Start saving Today</h2>
-                                <Button title="Download for free" className="bg-white text-[#3C0071] w-42 h-[57px] text-sm" />
+                        <div className="relative w-full flex md:flex-row justify-between items-center px-20 z-10 sm:px-10 md:px-20">
+                            <div className="flex flex-col gap-8 sm:gap-8 md:text-left">
+                                <h2 className="font-bold text-4xl w-80 sm:text-4xl md:w-80">Download for free Start saving Today</h2>
+                                <Button title="Download for free" className="bg-white text-[#3C0071] w-42 h-[57px] text-sm md:w-42 sm:h-[57px]" />
                             </div>
-                            <img src={download} alt="download" className="mt-16" />
+                            <img src={download} alt="download" className="mt-16 md:mt-16 sm:w-auto" />
                         </div>
                     </div>
                 </div>
 
-                <div className="flex text-[13px] leading-8 justify-between">
-                    <div className="flex w-3/5 gap-24 mt-60">
+                <div className="flex text-[13px] leading-8 justify-between md:flex-row sm:mt-96 md:mt-60">
+                    <div className="flex w-3/5 gap-24 mt-60 sm:flex-row md:w-3/5 sm:gap-24">
                         <div>
                             <h4 className="font-extrabold">Products</h4>
                             <ul>
@@ -54,7 +54,7 @@ const Footer = () => {
                         </div>
                     </div>
 
-                    <div className="flex w-2/5 justify-between mt-60">
+                    <div className="flex w-2/5 justify-between mt-60  sm:flex-row md:w-2/5 sm:gap-0 ">
                         <div>
                             <h4 className="font-extrabold">Developer</h4>
                             <ul>
@@ -82,9 +82,9 @@ const Footer = () => {
                 <hr className="bg-[#D1D5DB] my-8" />
 
                 <div>
-                    <div className="flex justify-between">
-                        <p className="text-sm font-medium leading-[17.36px]">© 2023 Ardilla. All right reserved</p>
-                        <div className="flex w-44 justify-around">
+                    <div className="flex justify-between items-center sm:flex-row sm:text-left">
+                        <p className="text-sm font-medium leading-[17.36px] sm:mb-0">© 2023 Ardilla. All right reserved</p>
+                        <div className="flex w-44 justify-around sm:w-44">
                             <div className="rounded-full h-8 w-8 flex items-center justify-center border-solid border-white border-[1px]">
                                 <SlSocialInstagram />
                             </div>
@@ -99,7 +99,7 @@ const Footer = () => {
                             </div>
                         </div>
                     </div>
-                    <p className="text-[13px] font-normal leading-8 w-[1031px]">Ardilla operates under the cooperative license of Ardilla Multipurpose Cooperative Society, LSC 18245, We provide 
+                    <p className="text-[13px] font-normal leading-8 w-[1031px]  sm:mt-8">Ardilla operates under the cooperative license of Ardilla Multipurpose Cooperative Society, LSC 18245, We provide 
                         Savings and Fixed deposit services to our users
                     </p>
                 </div>

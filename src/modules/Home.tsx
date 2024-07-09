@@ -64,7 +64,7 @@ const Home = () => {
             <h1 className="text-white text-center text-4xl md:text-[76px] font-extrabold leading-tight md:leading-[100px]">
               Access More With Your Money
             </h1>
-            <p className="text-white text-center text-base md:w-[836px] font-medium leading-8 md:leading-[32px]">
+            <p className="text-white text-base md:w-[836px] font-medium leading-8 md:leading-[32px]">
               Earn, learn, parlay, and grow financially. With Ardilla, you have more opportunities than ever at your fingertips. Why not take advantage today?
             </p>
             <Link to="/interest" className="self-center md:self-start">
